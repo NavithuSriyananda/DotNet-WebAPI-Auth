@@ -1,11 +1,11 @@
-﻿using JWT.WebAPI.Models;
+﻿using JWTAuth.WebAPI.Models;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Configuration;
 using System.Net.Mime;
 using System.Text;
 using System.Text.Json;
 
-namespace WebAPI.JWT.Test
+namespace JWTAuth.WebAPI.Test
 {
     public class WeatherForcastTests : IClassFixture<WebApplicationFactory<Program>>
     {

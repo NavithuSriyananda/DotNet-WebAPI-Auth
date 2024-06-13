@@ -1,10 +1,10 @@
-﻿using JWT.WebAPI.Models;
+﻿using JWTAuth.WebAPI.Models;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json;
 using System.Net;
 using System.Text;
 
-namespace WebAPI.JWT.Test
+namespace JWTAuth.WebAPI.Test
 {
     public class AuthControllerTests : IClassFixture<WebApplicationFactory<Program>>
     {

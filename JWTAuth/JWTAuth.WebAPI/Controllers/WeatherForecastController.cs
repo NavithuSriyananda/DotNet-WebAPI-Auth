@@ -1,8 +1,8 @@
-using JWT.WebAPI.Models;
+using JWTAuth.WebAPI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace JWT.WebAPI.Controllers
+namespace JWTAuth.WebAPI.Controllers
 {
     [Authorize]
     [ApiController]

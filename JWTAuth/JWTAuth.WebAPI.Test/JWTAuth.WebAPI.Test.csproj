@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\JWT.WebAPI\JWT.WebAPI.csproj" />
+    <ProjectReference Include="..\JWTAuth.WebAPI\JWTAuth.WebAPI.csproj" />
   </ItemGroup>
 
   <ItemGroup>
