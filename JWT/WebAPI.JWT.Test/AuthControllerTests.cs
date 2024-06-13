@@ -4,7 +4,6 @@ using Newtonsoft.Json;
 using System.Net;
 using System.Text;
 
-
 namespace WebAPI.JWT.Test
 {
     public class AuthControllerTests : IClassFixture<WebApplicationFactory<Program>>
@@ -13,16 +12,6 @@ namespace WebAPI.JWT.Test
 
         public AuthControllerTests(WebApplicationFactory<Program> factory)
         {
-           // var config = new ConfigurationBuilder()
-           //.AddInMemoryCollection(new Dictionary<string, string>
-           //{
-           //    { "Jwt:Key", "JeEeVuXL5U2os9tZb+CVzjwjh6MZYn23Ue+rL0xwspk=" },
-           //    { "Jwt:Issuer" , "https://localhost"},
-           //    { "Jwt:Audience" , "https://localhost"},
-           //    { "Jwt:ClockSkewMinutes" , "1440"}
-           //})
-           //.Build();
-
             _client = factory.WithWebHostBuilder(builder =>
             {
                 builder.ConfigureServices(services =>

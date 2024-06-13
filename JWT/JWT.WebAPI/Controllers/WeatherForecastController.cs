@@ -22,7 +22,7 @@ namespace JWT.WebAPI.Controllers
         }
 
         [HttpGet("list")]
-        public IEnumerable<WeatherForecast> List()
+        public IEnumerable<WeatherForecast> List(CancellationToken cancellationToken)
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {

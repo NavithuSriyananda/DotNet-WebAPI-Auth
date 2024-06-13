@@ -36,8 +36,44 @@ Authentication and authorization are two critical concepts in the context of inf
 
 > In summary, authentication is about verifying identity, while authorization is about granting the appropriate level of access based on that verified identity. Both are essential components of a secure system.
 
+## Projects
 
-
+1. Basic Authentication and Authorization
+	- Project Name: BasicAuth
+	- Description: Implement basic authentication and role-based authorization in a .NET Web API. Demonstrate how to secure endpoints with [Authorize] attribute and how to handle user roles.
+2. JWT Authentication
+	- Project Name: JWTAuth
+	- Description: Implement JSON Web Token (JWT) authentication. Show how to generate JWT tokens, validate them, and use them for securing API endpoints. Include role-based authorization using claims in the JWT.
+3. OAuth2 and OpenID Connect
+	- Project Name: OAuth2OpenID
+	- Description: Implement OAuth2 and OpenID Connect using an external provider (e.g., Google, Microsoft). Demonstrate how to integrate external login, token management, and API protection.
+4. Two-Factor Authentication (2FA)
+	- Project Name: TwoFactorAuth
+	- Description: Add two-factor authentication to a .NET Web API using SMS or email-based OTP (One-Time Password) verification. Show the process of enrolling for 2FA and validating the second factor during login.
+5. API Key Authentication
+	- Project Name: APIKeyAuth
+	- Description: Implement API key authentication for a .NET Web API. Demonstrate how to generate, distribute, and validate API keys. Secure specific endpoints using API keys.
+6. Custom Authentication Middleware
+	- Project Name: CustomAuthMiddleware
+	- Description: Create a custom authentication middleware for a .NET Web API. Show how to build and integrate a middleware that authenticates users based on custom logic (e.g., validating credentials against a database).
+7. Role-Based Access Control (RBAC)
+	- Project Name: RBAC
+	- Description: Implement role-based access control in a .NET Web API. Define roles and permissions, assign roles to users, and protect endpoints based on user roles.
+8. Attribute-Based Access Control (ABAC)
+	- Project Name: ABAC
+	- Description: Implement attribute-based access control in a .NET Web API. Use policies based on user attributes (e.g., department, job title) to authorize access to resources.
+9. IdentityServer Integration
+	- Project Name: IdentityServerIntegration
+	- Description: Integrate IdentityServer for centralized authentication and authorization. Demonstrate how to set up IdentityServer, configure clients, and protect APIs using IdentityServer tokens.
+10. Social Login Integration
+	- Project Name: SocialLogin
+	- Description: Implement social login functionality using providers like Google, Facebook, and GitHub. Show how to authenticate users via social accounts and integrate with a .NET Web API.
+11. Token Refresh Mechanism
+	- Project Name: TokenRefresh
+	- Description: Implement a token refresh mechanism for JWT tokens. Show how to handle token expiration and refresh tokens to maintain user sessions without requiring re-login.
+12. Secure File Upload API
+	- Project Name: SecureFileUpload
+	- Description: Build a secure file upload API with authentication and authorization. Ensure that only authenticated and authorized users can upload and download files.
 
 
 

@@ -34,7 +34,12 @@ namespace JWT.WebAPI.Controllers
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new List<Claim>() {
-                new Claim(  JwtRegisteredClaimNames.Sub, loginRequest.Username)
+                new Claim(JwtRegisteredClaimNames.Sub, loginRequest.Username),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(ClaimTypes.Name, loginRequest.Username),
+                // Add roles to claims
+                new Claim(ClaimTypes.Role, "Admin"),
+                new Claim(ClaimTypes.Role, "Employee")
             };
 
             var Sectoken = new JwtSecurityToken(

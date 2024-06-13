@@ -9,7 +9,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JWT.WebAPI", "JWT\JWT.WebAP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI.JWT.Test", "JWT\WebAPI.JWT.Test\WebAPI.JWT.Test.csproj", "{928BEE3D-F78C-4C9B-8C8B-E3DB838E8286}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureKeyGenerator", "SecureKeyGenerator\SecureKeyGenerator.csproj", "{B8B4CB0A-016A-409A-B9C2-4EE308263F5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecureKeyGenerator", "SecureKeyGenerator\SecureKeyGenerator.csproj", "{B8B4CB0A-016A-409A-B9C2-4EE308263F5E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C2C4CA81-3AB6-40CB-869E-0C34D961B291}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BasicAuth", "BasicAuth", "{60B8AC13-D092-4478-B23A-48EA41A695E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
