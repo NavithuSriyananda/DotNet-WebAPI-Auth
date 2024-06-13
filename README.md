@@ -1,4 +1,4 @@
-# DotNet-WebAPI-Authentication
+# DotNet-WebAPI-Auth
 
 Authentication and authorization are two critical concepts in the context of information security, particularly when it comes to accessing systems, applications, and data. They serve different purposes but often work together to protect resources.
 
