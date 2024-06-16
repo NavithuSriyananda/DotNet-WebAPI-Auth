@@ -1,4 +1,4 @@
-namespace JWTAuth.WebAPI.Models;
+namespace BasicAuth.WebAPI.Models;
 
 public class WeatherForecast
 {

@@ -5,48 +5,47 @@ using System.Net.Mime;
 using System.Text;
 using System.Text.Json;
 
-namespace JWTAuth.WebAPI.Test
+namespace JWTAuth.WebAPI.Tests;
+
+public class WeatherForcastTests : IClassFixture<WebApplicationFactory<Program>>
 {
-    public class WeatherForcastTests : IClassFixture<WebApplicationFactory<Program>>
+    private readonly HttpClient _client;
+    private IConfiguration _config;
+
+    public WeatherForcastTests(WebApplicationFactory<Program> factory)
     {
-        private readonly HttpClient _client;
-        private IConfiguration _config;
+        // Build configuration
+        _config = new ConfigurationBuilder()
+            .SetBasePath(AppContext.BaseDirectory)
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .AddEnvironmentVariables()
+            .Build();
 
-        public WeatherForcastTests(WebApplicationFactory<Program> factory)
+        _client = factory.WithWebHostBuilder(builder =>
         {
-            // Build configuration
-            _config = new ConfigurationBuilder()
-                .SetBasePath(AppContext.BaseDirectory)
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .AddEnvironmentVariables()
-                .Build();
-
-            _client = factory.WithWebHostBuilder(builder =>
+            builder.ConfigureServices(services =>
             {
-                builder.ConfigureServices(services =>
-                {
-                });
-            }).CreateClient();
-        }
+            });
+        }).CreateClient();
+    }
 
-        [Fact]
-        public async Task GetWeatherForecast_WithValidCredentials_ReturnsWeatherForecasts()
-        {
-            //Arrange
-            var loginModel = new LoginModel { Username = "asd", Password = "asd" };
+    [Fact]
+    public async Task GetWeatherForecast_WithValidCredentials_ReturnsWeatherForecasts()
+    {
+        //Arrange
+        var loginModel = new LoginModel { Username = "asd", Password = "asd" };
 
-            var json = JsonSerializer.Serialize(loginModel);
-            var content = new StringContent(json, Encoding.UTF8, MediaTypeNames.Application.Json);
+        var json = JsonSerializer.Serialize(loginModel);
+        var content = new StringContent(json, Encoding.UTF8, MediaTypeNames.Application.Json);
 
-            var response = await _client.PostAsync("/api/auth/login", content);
-            var stringContent = await response.Content.ReadAsStringAsync();
+        var response = await _client.PostAsync("/api/auth/login", content);
+        var stringContent = await response.Content.ReadAsStringAsync();
 
 
-            // Act
-            var response2 = await _client.GetAsync("/api/weatherforecast/list");
+        // Act
+        var response2 = await _client.GetAsync("/api/weatherforecast/list");
 
-            // Assert
+        // Assert
 
-        }
     }
 }

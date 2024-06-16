@@ -71,9 +71,5 @@ Authentication and authorization are two critical concepts in the context of inf
 11. Token Refresh Mechanism
 	- Project Name: TokenRefresh
 	- Description: Implement a token refresh mechanism for JWT tokens. Show how to handle token expiration and refresh tokens to maintain user sessions without requiring re-login.
-12. Secure File Upload API
-	- Project Name: SecureFileUpload
-	- Description: Build a secure file upload API with authentication and authorization. Ensure that only authenticated and authorized users can upload and download files.
-
 
 

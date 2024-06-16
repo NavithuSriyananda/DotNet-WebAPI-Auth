@@ -6,34 +6,34 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace JWTAuth.WebAPI.Controllers
+namespace JWTAuth.WebAPI.Controllers;
+
+[AllowAnonymous]
+[Route("api/[controller]")]
+[ApiController]
+public class AuthController : ControllerBase
 {
-    [AllowAnonymous]
-    [Route("api/[controller]")]
-    [ApiController]
-    public class AuthController : ControllerBase
+    private IConfiguration _config;
+    public AuthController(IConfiguration config)
     {
-        private IConfiguration _config;
-        public AuthController(IConfiguration config)
+        _config = config;
+    }
+
+    [HttpPost(nameof(Login))]
+    public IActionResult Login([FromBody] LoginModel loginRequest)
+    {
+        //your logic for login process
+        //If login usrename and password are correct then proceed to generate token
+
+        if (string.IsNullOrEmpty(loginRequest.Username) || string.IsNullOrEmpty(loginRequest.Password))
         {
-            _config = config;
+            return Unauthorized();
         }
 
-        [HttpPost(nameof(Login))]
-        public IActionResult Login([FromBody] LoginModel loginRequest)
-        {
-            //your logic for login process
-            //If login usrename and password are correct then proceed to generate token
+        var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+        var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            if (string.IsNullOrEmpty(loginRequest.Username) || string.IsNullOrEmpty(loginRequest.Password))
-            {
-                return Unauthorized();
-            }
-
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
-            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-
-            var claims = new List<Claim>() {
+        var claims = new List<Claim>() {
                 new Claim(JwtRegisteredClaimNames.Sub, loginRequest.Username),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(ClaimTypes.Name, loginRequest.Username),
@@ -42,17 +42,16 @@ namespace JWTAuth.WebAPI.Controllers
                 new Claim(ClaimTypes.Role, "Employee")
             };
 
-            var Sectoken = new JwtSecurityToken(
-                _config["Jwt:Issuer"],
-                _config["Jwt:Audience"],
-                claims,
-                expires: DateTime.Now.AddMinutes(120),
-                signingCredentials: credentials);
+        var Sectoken = new JwtSecurityToken(
+            _config["Jwt:Issuer"],
+            _config["Jwt:Audience"],
+            claims,
+            expires: DateTime.Now.AddMinutes(120),
+            signingCredentials: credentials);
 
-            var token = new JwtSecurityTokenHandler().WriteToken(Sectoken);
+        var token = new JwtSecurityTokenHandler().WriteToken(Sectoken);
 
-            return Ok(new { Token = "Bearer " + token });
-        }
-
+        return Ok(new { Token = "Bearer " + token });
     }
+
 }
