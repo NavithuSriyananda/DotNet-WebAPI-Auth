@@ -44,11 +44,7 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddAuthentication("BasicAuthentication")
         .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
 
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("AdminRolePolicy", policy => policy.RequireRole("Admin"));
-    options.AddPolicy("SuperAdminRolePolicy", policy => policy.RequireRole("SuperAdmin"));
-});
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 

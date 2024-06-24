@@ -40,7 +40,10 @@ Authentication and authorization are two critical concepts in the context of inf
 
 1. Basic Authentication and Authorization
 	- Project Name: BasicAuth
-	- Description: Implement basic authentication and role-based authorization in a .NET Web API. Demonstrate how to secure endpoints with [Authorize] attribute and how to handle user roles.
+	- Description: Basic authentication involves sending the username and password encoded in Base64 in the Authorization header of the HTTP request.
+								
+	      Authorization: Basic <base64encoded(username:password)>
+
 2. JWT Authentication
 	- Project Name: JWTAuth
 	- Description: Implement JSON Web Token (JWT) authentication. Show how to generate JWT tokens, validate them, and use them for securing API endpoints. Include role-based authorization using claims in the JWT.
