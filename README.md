@@ -38,18 +38,22 @@ Authentication and authorization are two critical concepts in the context of inf
 
 ## Projects
 
-1. Basic Authentication and Authorization
+1. Basic Authentication
 	- Project Name: BasicAuth
-	- Description: Basic authentication involves sending the username and password encoded in Base64 in the Authorization header of the HTTP request.
+	- Description: Basic authentication involves sending the username and password encoded in Base64 in the Authorization header of the HTTP request. Use HTTPS to encrypt requests.
 								
 	      Authorization: Basic <base64encoded(username:password)>
 
 2. JWT Authentication
 	- Project Name: JWTAuth
-	- Description: Implement JSON Web Token (JWT) authentication. Show how to generate JWT tokens, validate them, and use them for securing API endpoints. Include role-based authorization using claims in the JWT.
+	- Description: Jot is a robust method for securing APIs. It involves issuing a token to the client after successfully authenticating, which the client then includes in subsequent API requests. This token verifies the user's identity and permissions without needing to transmit credentials repeatedly.
+					
+	      Authorization: Bearer <JWT>
+
 3. OAuth2 and OpenID Connect
 	- Project Name: OAuth2OpenID
 	- Description: Implement OAuth2 and OpenID Connect using an external provider (e.g., Google, Microsoft). Demonstrate how to integrate external login, token management, and API protection.
+
 4. Two-Factor Authentication (2FA)
 	- Project Name: TwoFactorAuth
 	- Description: Add two-factor authentication to a .NET Web API using SMS or email-based OTP (One-Time Password) verification. Show the process of enrolling for 2FA and validating the second factor during login.
