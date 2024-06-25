@@ -53,6 +53,8 @@ Authentication and authorization are two critical concepts in the context of inf
 3. OAuth2 and OpenID Connect
 	- Project Name: OAuth2OpenID
 	- Description: Implement OAuth2 and OpenID Connect using an external provider (e.g., Google, Microsoft). Demonstrate how to integrate external login, token management, and API protection.
+	- OAuth2 is a authentication flow.
+	- Reference: https://developer.okta.com/blog/2019/10/21/illustrated-guide-to-oauth-and-oidc 
 
 4. Two-Factor Authentication (2FA)
 	- Project Name: TwoFactorAuth
