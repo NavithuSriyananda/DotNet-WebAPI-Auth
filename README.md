@@ -53,7 +53,8 @@ Authentication and authorization are two critical concepts in the context of inf
 3. OAuth2 and OpenID Connect
 	- Project Name: OAuth2OpenID
 	- Description: Implement OAuth2 and OpenID Connect using an external provider (e.g., Google, Microsoft). Demonstrate how to integrate external login, token management, and API protection.
-	- OAuth2 is a authentication flow.
+		- OAuth 2.0 is designed only for authorization, for granting access to data and features from one application to another. Generates Access Token. Access Token is just a string of gibberish to pass with any request to the Resource Server, and the Resource Server knows if the token is valid.
+		- OpenID Connect (OIDC) is a thin layer that sits on top of OAuth 2.0 that adds login and profile information about the person who is logged in. Establishing a login session is often referred to as authentication. Generates ID Token. ID Token is a JWT. Client can extract information embedded in the JWT such as your ID, name, when you logged in, the ID Token expiration, and if anything has tried to tamper with the JWT. The data inside the ID Token are called claims.
 	- Reference: https://developer.okta.com/blog/2019/10/21/illustrated-guide-to-oauth-and-oidc 
 
 4. Two-Factor Authentication (2FA)
