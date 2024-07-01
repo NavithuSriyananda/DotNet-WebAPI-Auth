@@ -50,34 +50,33 @@ Authentication and authorization are two critical concepts in the context of inf
 					
 	      Authorization: Bearer <JWT>
 
-3. OAuth2 and OpenID Connect
+3. API Key Authentication
+	- Project Name: APIKeyAuth
+	- Description: Implement API key authentication for a .NET Web API. Demonstrate how to generate, distribute, and validate API keys. Secure specific endpoints using API keys.
+
+4. OAuth2 and OpenID Connect
 	- Project Name: OAuth2OpenID
 	- Description: Implement OAuth2 and OpenID Connect using an external provider (e.g., Google, Microsoft). Demonstrate how to integrate external login, token management, and API protection.
 		- OAuth 2.0 is designed only for authorization, for granting access to data and features from one application to another. Generates Access Token. Access Token is just a string of gibberish to pass with any request to the Resource Server, and the Resource Server knows if the token is valid.
 		- OpenID Connect (OIDC) is a thin layer that sits on top of OAuth 2.0 that adds login and profile information about the person who is logged in. Establishing a login session is often referred to as authentication. Generates ID Token. ID Token is a JWT. Client can extract information embedded in the JWT such as your ID, name, when you logged in, the ID Token expiration, and if anything has tried to tamper with the JWT. The data inside the ID Token are called claims.
 	- Reference: https://developer.okta.com/blog/2019/10/21/illustrated-guide-to-oauth-and-oidc 
 
-4. Two-Factor Authentication (2FA)
+5. Two-Factor Authentication (2FA)
 	- Project Name: TwoFactorAuth
 	- Description: Add two-factor authentication to a .NET Web API using SMS or email-based OTP (One-Time Password) verification. Show the process of enrolling for 2FA and validating the second factor during login.
-5. API Key Authentication
-	- Project Name: APIKeyAuth
-	- Description: Implement API key authentication for a .NET Web API. Demonstrate how to generate, distribute, and validate API keys. Secure specific endpoints using API keys.
-6. Custom Authentication Middleware
-	- Project Name: CustomAuthMiddleware
-	- Description: Create a custom authentication middleware for a .NET Web API. Show how to build and integrate a middleware that authenticates users based on custom logic (e.g., validating credentials against a database).
+
 7. Role-Based Access Control (RBAC)
 	- Project Name: RBAC
 	- Description: Implement role-based access control in a .NET Web API. Define roles and permissions, assign roles to users, and protect endpoints based on user roles.
+
 8. Attribute-Based Access Control (ABAC)
 	- Project Name: ABAC
 	- Description: Implement attribute-based access control in a .NET Web API. Use policies based on user attributes (e.g., department, job title) to authorize access to resources.
+
 9. IdentityServer Integration
 	- Project Name: IdentityServerIntegration
 	- Description: Integrate IdentityServer for centralized authentication and authorization. Demonstrate how to set up IdentityServer, configure clients, and protect APIs using IdentityServer tokens.
-10. Social Login Integration
-	- Project Name: SocialLogin
-	- Description: Implement social login functionality using providers like Google, Facebook, and GitHub. Show how to authenticate users via social accounts and integrate with a .NET Web API.
+
 11. Token Refresh Mechanism
 	- Project Name: TokenRefresh
 	- Description: Implement a token refresh mechanism for JWT tokens. Show how to handle token expiration and refresh tokens to maintain user sessions without requiring re-login.
