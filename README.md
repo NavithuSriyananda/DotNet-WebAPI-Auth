@@ -61,23 +61,15 @@ Authentication and authorization are two critical concepts in the context of inf
 		- OpenID Connect (OIDC) is a thin layer that sits on top of OAuth 2.0 that adds login and profile information about the person who is logged in. Establishing a login session is often referred to as authentication. Generates ID Token. ID Token is a JWT. Client can extract information embedded in the JWT such as your ID, name, when you logged in, the ID Token expiration, and if anything has tried to tamper with the JWT. The data inside the ID Token are called claims.
 	- Reference: https://developer.okta.com/blog/2019/10/21/illustrated-guide-to-oauth-and-oidc 
 
-5. Two-Factor Authentication (2FA)
-	- Project Name: TwoFactorAuth
-	- Description: Add two-factor authentication to a .NET Web API using SMS or email-based OTP (One-Time Password) verification. Show the process of enrolling for 2FA and validating the second factor during login.
-
-7. Role-Based Access Control (RBAC)
+5. Role-Based Access Control (RBAC)
 	- Project Name: RBAC
 	- Description: Implement role-based access control in a .NET Web API. Define roles and permissions, assign roles to users, and protect endpoints based on user roles.
 
-8. Attribute-Based Access Control (ABAC)
+6. Attribute-Based Access Control (ABAC)
 	- Project Name: ABAC
 	- Description: Implement attribute-based access control in a .NET Web API. Use policies based on user attributes (e.g., department, job title) to authorize access to resources.
 
-9. IdentityServer Integration
-	- Project Name: IdentityServerIntegration
-	- Description: Integrate IdentityServer for centralized authentication and authorization. Demonstrate how to set up IdentityServer, configure clients, and protect APIs using IdentityServer tokens.
-
-11. Token Refresh Mechanism
+7. Token Refresh Mechanism
 	- Project Name: TokenRefresh
 	- Description: Implement a token refresh mechanism for JWT tokens. Show how to handle token expiration and refresh tokens to maintain user sessions without requiring re-login.
 
