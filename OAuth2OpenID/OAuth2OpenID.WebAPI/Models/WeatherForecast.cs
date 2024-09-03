@@ -1,4 +1,4 @@
-namespace OAuth2OpenID.WebAPI
+namespace OAuth2OpenID.WebAPI.Models
 {
     public class WeatherForecast
     {

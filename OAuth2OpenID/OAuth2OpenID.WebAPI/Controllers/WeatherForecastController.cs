@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using OAuth2OpenID.WebAPI.Models;
 
 namespace OAuth2OpenID.WebAPI.Controllers
 {
@@ -18,6 +20,7 @@ namespace OAuth2OpenID.WebAPI.Controllers
             _logger = logger;
         }
 
+        [Authorize]
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
