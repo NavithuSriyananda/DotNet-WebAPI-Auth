@@ -46,7 +46,7 @@ if (builder.Environment.IsDevelopment())
                     TokenUrl = new Uri("https://localhost:7000/connect/token"),
                     Scopes = new Dictionary<string, string>
                             {
-                                { "api1", "Access to My API" }
+                                { "api1", "Access to Read API" }
                             }
                 }
             }

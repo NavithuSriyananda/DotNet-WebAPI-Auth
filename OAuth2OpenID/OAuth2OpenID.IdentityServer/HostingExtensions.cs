@@ -1,6 +1,4 @@
-﻿using Duende.IdentityServer;
-using Microsoft.IdentityModel.Tokens;
-using Serilog;
+﻿using Serilog;
 
 namespace OAuth2OpenID.IdentityServer;
 
@@ -12,31 +10,13 @@ public static class HostingExtensions
 
         builder.Services.AddIdentityServer()
             .AddInMemoryIdentityResources(Config.IdentityResources)
-            //.AddInMemoryApiScopes(Config.ApiScopes)
             .AddInMemoryApiResources(Config.ApiResources)
+            .AddInMemoryApiScopes(Config.ApiScopes)
             .AddInMemoryClients(Config.Clients)
             .AddTestUsers(TestUsers.Users)
             .AddDeveloperSigningCredential();
 
         var authenticationBuilder = builder.Services.AddAuthentication();
-
-        authenticationBuilder.AddOpenIdConnect("oidc", "Demo IdentityServer", options =>
-        {
-            options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
-            options.SignOutScheme = IdentityServerConstants.SignoutScheme;
-            options.SaveTokens = true;
-
-            options.Authority = "https://demo.duendesoftware.com";
-            options.ClientId = "interactive.confidential";
-            options.ClientSecret = "secret";
-            options.ResponseType = "code";
-
-            options.TokenValidationParameters = new TokenValidationParameters
-            {
-                NameClaimType = "name",
-                RoleClaimType = "role"
-            };
-        });
 
         return builder.Build();
     }

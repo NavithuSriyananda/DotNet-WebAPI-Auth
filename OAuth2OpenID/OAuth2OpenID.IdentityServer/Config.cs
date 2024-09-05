@@ -1,5 +1,4 @@
-﻿using Duende.IdentityServer;
-using Duende.IdentityServer.Models;
+﻿using Duende.IdentityServer.Models;
 using IdentityModel;
 
 namespace OAuth2OpenID.IdentityServer;
@@ -23,13 +22,6 @@ public static class Config
             }
         };
 
-    //public static IEnumerable<ApiScope> ApiScopes =>
-    //    new ApiScope[]
-    //    {
-    //        new ApiScope(name: "read", displayName: "Read data"),
-    //        new ApiScope(name: "write", displayName: "Write data"),
-    //        new ApiScope(name: "delete", displayName: "Delete data")
-    //    };
     public static IEnumerable<ApiResource> ApiResources =>
         new ApiResource[]
         {
@@ -46,6 +38,13 @@ public static class Config
                 Scopes = { "api3.delete" }
             },
         };
+    public static IEnumerable<ApiScope> ApiScopes =>
+    new ApiScope[]
+    {
+            new ApiScope(name: "api1.read", displayName: "Read data"),
+            new ApiScope(name: "api2.write", displayName: "Write data"),
+            new ApiScope(name: "api3.delete", displayName: "Delete data")
+    };
 
     public static IEnumerable<Client> Clients =>
         new Client[]
@@ -64,24 +63,11 @@ public static class Config
                 },
 
                 // scopes that client has access to
-                AllowedScopes = { "api1.read" }
-
-            },
-            new Client
-                {
-                    ClientId = "oidc_client",
-                    AllowedGrantTypes = GrantTypes.Code,
-                    ClientSecrets = { new Secret("oidc_secret".Sha256()) },
-                    RedirectUris = { "https://localhost:5002/signin-oidc" },
-                    PostLogoutRedirectUris = { "https://localhost:5002/signout-callback-oidc" },
-                    AllowedScopes =
-                    {
-                        IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile,
-                        "api1.read"
-                    },
-                    AllowOfflineAccess = true
+                AllowedScopes =
+                {       "api1.read"
                 }
+
+            }
 
         };
 }
