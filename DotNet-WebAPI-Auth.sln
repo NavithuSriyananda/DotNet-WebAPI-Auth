@@ -24,6 +24,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicAuth.WebAPI.Tests", "B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OAuth2OpenID", "OAuth2OpenID", "{69482801-6776-4784-B02B-9B0851F479BC}"
 	ProjectSection(SolutionItems) = preProject
+		OAuth2OpenID\OAuth2OpenID.postman_collection.json = OAuth2OpenID\OAuth2OpenID.postman_collection.json
 		OAuth2OpenID\README.md = OAuth2OpenID\README.md
 	EndProjectSection
 EndProject
@@ -37,7 +38,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIKey.WebAPI", "APIKey\API
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIKey.WebAPI.Tests", "APIKey\APIKey.WebAPI.Tests\APIKey.WebAPI.Tests.csproj", "{6C9E4F7A-EA8F-4A64-B4E6-46C0ECFBE506}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuth2OpenID.IdentityServer", "OAuth2OpenID\OAuth2OpenID.IdentityServer\OAuth2OpenID.IdentityServer.csproj", "{B97D4C43-25B4-4C0C-9719-77EAB10BB584}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OAuth2OpenID.IdentityServer", "OAuth2OpenID\OAuth2OpenID.IdentityServer\OAuth2OpenID.IdentityServer.csproj", "{B97D4C43-25B4-4C0C-9719-77EAB10BB584}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

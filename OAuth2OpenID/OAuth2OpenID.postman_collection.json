@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "519cc908-e9c5-4433-b049-2eff0099b185",
+		"name": "OAuth2OpenID",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "36524506"
+	},
+	"item": [
+		{
+			"name": "oidc discovery",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://localhost:7000/.well-known/openid-configuration"
+			},
+			"response": []
+		},
+		{
+			"name": "Get WeatherForecast",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://localhost:7018/WeatherForecast/GetWeatherForecast"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": {
+			"client_authentication": "header",
+			"refreshRequestParams": [],
+			"tokenRequestParams": [],
+			"authRequestParams": [],
+			"tokenName": "Bearer",
+			"challengeAlgorithm": "S256",
+			"scope": "api1.read",
+			"grant_type": "client_credentials",
+			"clientSecret": "OAuth2OpenID.WebAPI",
+			"clientId": "OAuth2OpenID.WebAPI",
+			"authUrl": "https://localhost:7000/connect/authorize",
+			"addTokenTo": "header",
+			"accessTokenUrl": "https://localhost:7000/connect/token"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
